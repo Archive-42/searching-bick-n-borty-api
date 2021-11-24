@@ -130,8 +130,8 @@
 
   .header {
     background: linear-gradient(to bottom, #ae8600, #885b01);
-    background-image: url('assets/cover-mobile.webp');
-    background-image: url('assets/cover-mobile.webp'),
+    background-image: url("assets/cover-mobile.webp");
+    background-image: url("assets/cover-mobile.webp"),
       linear-gradient(to bottom, #ae8600, #885b01);
     background-position: bottom;
     background-size: cover;
@@ -259,7 +259,7 @@
 
   /* Hide all desktop-specific design on mobile */
 
-  [data-layout='desktop'] {
+  [data-layout="desktop"] {
     display: none;
   }
 }

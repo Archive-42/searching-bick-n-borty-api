@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef } from "react";
 import {
   InstantSearch,
   RefinementList,
@@ -11,18 +11,18 @@ import {
   Configure,
   SearchBox,
   Snippet,
-} from 'react-instantsearch-dom';
-import algoliasearch from 'algoliasearch/lite';
+} from "react-instantsearch-dom";
+import algoliasearch from "algoliasearch/lite";
 import {
   ClearFiltersMobile,
   NoResults,
   ResultsNumberMobile,
   SaveFiltersMobile,
-} from './widgets';
-import './Theme.css';
-import './App.css';
-import './App.mobile.css';
-import './widgets/Pagination.css';
+} from "./widgets";
+import "./Theme.css";
+import "./App.css";
+import "./App.mobile.css";
+import "./widgets/Pagination.css";
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -50,26 +50,26 @@ const Hit = ({ hit }) => (
   </article>
 );
 
-const App = props => {
+const App = (props) => {
   const containerRef = useRef(null);
   const headerRef = useRef(null);
 
   function openFilters() {
-    document.body.classList.add('filtering');
+    document.body.classList.add("filtering");
     window.scrollTo(0, 0);
-    window.addEventListener('keyup', onKeyUp);
-    window.addEventListener('click', onClick);
+    window.addEventListener("keyup", onKeyUp);
+    window.addEventListener("click", onClick);
   }
 
   function closeFilters() {
-    document.body.classList.remove('filtering');
+    document.body.classList.remove("filtering");
     containerRef.current.scrollIntoView();
-    window.removeEventListener('keyup', onKeyUp);
-    window.removeEventListener('click', onClick);
+    window.removeEventListener("keyup", onKeyUp);
+    window.removeEventListener("click", onClick);
   }
 
   function onKeyUp(event) {
-    if (event.key !== 'Escape') {
+    if (event.key !== "Escape") {
       return;
     }
 
@@ -97,7 +97,7 @@ const App = props => {
 
         <SearchBox
           translations={{
-            placeholder: 'Name, description, location …',
+            placeholder: "Name, description, location …",
           }}
           submit={
             <svg
@@ -124,7 +124,7 @@ const App = props => {
       </header>
 
       <Configure
-        attributesToSnippet={['type', 'location.name']}
+        attributesToSnippet={["type", "location.name"]}
         snippetEllipsisText="…"
         removeWordsIfNoResults="allOptional"
       />
@@ -181,7 +181,7 @@ const App = props => {
                   searchable
                   attribute="location.name"
                   translations={{
-                    placeholder: 'Search for locations…',
+                    placeholder: "Search for locations…",
                   }}
                 />
               </Panel>
@@ -205,15 +205,15 @@ const App = props => {
               className="container-option"
               items={[
                 {
-                  label: '16 hits per page',
+                  label: "16 hits per page",
                   value: 16,
                 },
                 {
-                  label: '32 hits per page',
+                  label: "32 hits per page",
                   value: 32,
                 },
                 {
-                  label: '64 hits per page',
+                  label: "64 hits per page",
                   value: 64,
                 },
               ]}

@@ -1,10 +1,10 @@
-import React from 'react';
-import { connectCurrentRefinements } from 'react-instantsearch-dom';
+import React from "react";
+import { connectCurrentRefinements } from "react-instantsearch-dom";
 
 const ClearFiltersMobile = ({ items, refine, containerRef }) => {
   function onClick() {
     refine(items);
-    document.body.classList.remove('filtering');
+    document.body.classList.remove("filtering");
     containerRef.current.scrollIntoView();
   }
 

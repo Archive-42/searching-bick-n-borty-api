@@ -1,5 +1,5 @@
-import React from 'react';
-import { connectStateResults, ClearRefinements } from 'react-instantsearch-dom';
+import React from "react";
+import { connectStateResults, ClearRefinements } from "react-instantsearch-dom";
 
 const NoResults = ({ searchResults }) => {
   if (!searchResults || searchResults.nbHits > 0) {
@@ -8,8 +8,8 @@ const NoResults = ({ searchResults }) => {
 
   const hasRefinements = searchResults.getRefinements().length > 0;
   const description = hasRefinements
-    ? 'Try to reset your applied filters.'
-    : 'Please try another query.';
+    ? "Try to reset your applied filters."
+    : "Please try another query.";
 
   return (
     <div className="hits-empty-state">
